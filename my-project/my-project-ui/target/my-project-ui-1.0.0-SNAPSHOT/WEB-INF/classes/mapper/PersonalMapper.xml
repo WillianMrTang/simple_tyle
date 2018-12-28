@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.twgfs.ui.dao.PersonalCenterDao">
+
+    <select id="SelectById" resultType="com.twgfs.domain.entity.Article">
+        SELECT id,textArea,Fabulous,uoloadTime,artieimg,firstartic,smalltitle,userid
+        FROM article WHERE userid=#{userid}
+    </select>
+
+    <insert id="AddCollection">
+        INSERT INTO collection (textArea,Fabulous,uoloadTime,artieimg,firstartic,smalltitle,userid,articleid)
+        VALUES (#{textarea},#{fabulous},#{uoloadtime},#{artieimg},#{firstartic},#{smalltitle},#{userid},#{id})
+    </insert>
+
+    <select id="SelectCollection" resultType="com.twgfs.domain.entity.Collectionentitys">
+        SELECT textArea,Fabulous,uoloadTime,artieimg,firstartic,smalltitle,articleid
+        FROM collection WHERE userid=#{userid}
+    </select>
+
+    <delete id="removeEssay">
+        DELETE FROM collection WHERE userid=#{userid} AND articleid=#{essayid}
+    </delete>
+</mapper>

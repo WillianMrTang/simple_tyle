@@ -1,0 +1,6 @@
+com\twgfs\domain\entity\Collectionentitys.class
+com\twgfs\domain\entity\User.class
+com\twgfs\domain\entity\Middlecategory.class
+com\twgfs\domain\entity\Article.class
+com\twgfs\domain\entity\Admainuser.class
+com\twgfs\domain\entity\Comment.class

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.twgfs.admain.dao.ArticleDao">
+
+    <sql id="Articlecoloum">
+        id,textArea,Fabulous,uoloadTime,artieimg,firstartic,smalltitle
+    </sql>
+
+    <select id="SelectAllArticle" resultType="com.twgfs.domain.entity.Article">
+        SELECT  <include refid="Articlecoloum"></include> FROM article
+    </select>
+
+    <select id="SelectById" resultType="com.twgfs.domain.entity.Article">
+        SELECT <include refid="Articlecoloum"></include> FROM article WHERE id=#{id}
+    </select>
+
+    <delete id="DeleteById">
+        DELETE FROM article WHERE id=#{id}
+    </delete>
+</mapper>

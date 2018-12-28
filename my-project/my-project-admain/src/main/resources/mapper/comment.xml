@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.twgfs.admain.dao.CommentDao">
+
+    <select id="GetComments" resultType="com.twgfs.domain.entity.Comment">
+        SELECT id,commention,articleid,username,commenttime FROM comment limit 0,20
+    </select>
+
+    <!--<select id="getTotalCount" resultType="com.twgfs.domain.entity.User">-->
+    <select id="getTotalCount" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM comment
+    </select>
+
+    <select id="getAllInfo" resultType="com.twgfs.domain.entity.Comment">
+        SELECT id,commention,articleid,username,commenttime FROM comment ORDER BY commenttime limit #{start},#{pagesize}
+    </select>
+
+    <delete id="DelCommentInfo">
+        DELETE FROM comment WHERE id=#{delid}
+    </delete>
+</mapper>

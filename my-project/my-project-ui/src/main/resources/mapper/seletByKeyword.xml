@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.twgfs.ui.dao.SelectByKeywordDao">
+
+    <sql id="articlColum">
+        id,textArea,Fabulous,uoloadTime,artieimg,firstartic,smalltitle
+    </sql>
+
+    <select id="SearchArticle" resultType="com.twgfs.domain.entity.Article">
+        SELECT <include refid="articlColum"></include> FROM article
+        WHERE smalltitle LIKE "%"#{keyword}"%"
+    </select>
+</mapper>

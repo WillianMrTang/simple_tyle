@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="twg@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="twg">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="performance_schema"/>
+    <schema id="6" parent="1" name="test"/>
+    <table id="7" parent="2" name="admainuser"/>
+    <table id="8" parent="2" name="article"/>
+    <table id="9" parent="2" name="collection"/>
+    <table id="10" parent="2" name="comment"/>
+    <table id="11" parent="2" name="largecategory"/>
+    <table id="12" parent="2" name="middlecategory"/>
+    <table id="13" parent="2" name="user"/>
+    <column id="14" parent="7" name="id">
+      <Position>1</Position>
+      <DataType>int(64)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="15" parent="7" name="AdmainName">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="16" parent="7" name="Password">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="17" parent="7" name="Email">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="18" parent="7" name="Phone">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <key id="19" parent="7" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="20" parent="8" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="21" parent="8" name="textArea">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="22" parent="8" name="Fabulous">
+      <Position>3</Position>
+      <DataType>int(255)|0</DataType>
+    </column>
+    <column id="23" parent="8" name="uoloadTime">
+      <Position>4</Position>
+      <DataType>varchar(64)|0</DataType>
+    </column>
+    <column id="24" parent="8" name="artieimg">
+      <Position>5</Position>
+      <DataType>varchar(124)|0</DataType>
+    </column>
+    <column id="25" parent="8" name="firstartic">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="26" parent="8" name="smalltitle">
+      <Position>7</Position>
+      <DataType>varchar(72)|0</DataType>
+    </column>
+    <column id="27" parent="8" name="userid">
+      <Position>8</Position>
+      <DataType>int(255)|0</DataType>
+    </column>
+    <key id="28" parent="8" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="29" parent="9" name="id">
+      <Position>1</Position>
+      <DataType>int(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="30" parent="9" name="textArea">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="31" parent="9" name="Fabulous">
+      <Position>3</Position>
+      <DataType>int(255)|0</DataType>
+    </column>
+    <column id="32" parent="9" name="uoloadTime">
+      <Position>4</Position>
+      <DataType>varchar(64)|0</DataType>
+    </column>
+    <column id="33" parent="9" name="artieimg">
+      <Position>5</Position>
+      <DataType>varchar(124)|0</DataType>
+    </column>
+    <column id="34" parent="9" name="firstartic">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="35" parent="9" name="smalltitle">
+      <Position>7</Position>
+      <DataType>varchar(72)|0</DataType>
+    </column>
+    <column id="36" parent="9" name="userid">
+      <Position>8</Position>
+      <DataType>int(255)|0</DataType>
+    </column>
+    <column id="37" parent="9" name="articleid">
+      <Position>9</Position>
+      <DataType>int(255)|0</DataType>
+    </column>
+    <key id="38" parent="9" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="39" parent="10" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="40" parent="10" name="commention">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="41" parent="10" name="articleid">
+      <Position>3</Position>
+      <DataType>int(255)|0</DataType>
+    </column>
+    <column id="42" parent="10" name="username">
+      <Position>4</Position>
+      <DataType>varchar(72)|0</DataType>
+    </column>
+    <column id="43" parent="10" name="commenttime">
+      <Position>5</Position>
+      <DataType>varchar(64)|0</DataType>
+    </column>
+    <key id="44" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="45" parent="11" name="id">
+      <Position>1</Position>
+      <DataType>int(24)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="46" parent="11" name="largecategoryname">
+      <Position>2</Position>
+      <DataType>varchar(64)|0</DataType>
+    </column>
+    <key id="47" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="48" parent="12" name="id">
+      <Position>1</Position>
+      <DataType>int(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="49" parent="12" name="middlename">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="50" parent="12" name="largeCategoryId">
+      <Position>3</Position>
+      <DataType>int(255)|0</DataType>
+    </column>
+    <column id="51" parent="12" name="middleimg">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="52" parent="12" name="uploaddate">
+      <Position>5</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="53" parent="12" name="uploader">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <key id="54" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="55" parent="13" name="userid">
+      <Position>1</Position>
+      <DataType>int(255)|0</DataType>
+    </column>
+    <column id="56" parent="13" name="id">
+      <Position>2</Position>
+      <DataType>int(32)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="57" parent="13" name="username">
+      <Position>3</Position>
+      <DataType>varchar(32)|0</DataType>
+    </column>
+    <column id="58" parent="13" name="password">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="59" parent="13" name="phone">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="60" parent="13" name="email">
+      <Position>6</Position>
+      <DataType>varchar(64)|0</DataType>
+    </column>
+    <key id="61" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

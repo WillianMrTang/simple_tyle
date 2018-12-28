@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.twgfs.admain.dao.UserDao">
+
+    <sql id="usercolom">
+        id,username,password,phone,email
+    </sql>
+
+    <select id="SelectAllUser" resultType="com.twgfs.domain.entity.User">
+        SELECT <include refid="usercolom"></include> FROM user limit #{startIndex},9
+    </select>
+
+    <select id="ConfirmName" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM user WHERE username=#{username}
+    </select>
+
+    <select id="SelectNeedChageUser" resultType="com.twgfs.domain.entity.User">
+          SELECT <include refid="usercolom"></include> FROM user WHERE id=#{id} OR username=#{id}
+    </select>
+
+    <update id="UpdateUserInfo">
+        UPDATE user SET username=#{username},password=#{password},phone=#{phone},email=#{email} WHERE id=#{id}
+    </update>
+
+    <delete id="DeluserUserInfoByIdOrName">
+        DELETE  FROM user WHERE id=#{idorname} OR username=#{idorname}
+    </delete>
+
+    <insert id="AddNewUserAtBack">
+        INSERT INTO user (username,password,phone,email) VALUES(#{username},#{password},#{phone},#{email})
+    </insert>
+
+    <select id="SearchUserInfoByFild" resultType="com.twgfs.domain.entity.User">
+        SELECT  <include refid="usercolom"></include>  FROM  user
+        WHERE username LIKE "%"#{searchfild}"%" OR phone LIKE "%"#{searchfild}"%" OR email LIKE "%"#{searchfild}"%"
+    </select>
+
+    <select id="TotalCount" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM user WHERE 1=1
+    </select>
+</mapper>

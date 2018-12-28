@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.twgfs.ui.dao.ArticleDao">
+
+    <sql id="articlColum">
+        id,textArea,Fabulous,uoloadTime,artieimg,firstartic,smalltitle
+    </sql>
+
+    <select id="SelectArticle" resultType="com.twgfs.domain.entity.Article">
+        SELECT  <include refid="articlColum"></include> FROM article limit 12
+    </select>
+
+    <select id="SelectArticleRightColoum" resultType="com.twgfs.domain.entity.Article">
+        SELECT <include refid="articlColum"></include> FROM article ORDER BY Fabulous DESC limit 0,12
+    </select>
+
+    <select id="SelectCount" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM article
+    </select>
+
+    <select id="SelectCurrenPage" resultType="com.twgfs.domain.entity.Article">
+        SELECT <include refid="articlColum"></include> FROM article limit #{start},#{current}
+    </select>
+
+    <insert id="addEssay">
+        INSERT INTO article (userid,textArea,Fabulous,uoloadTime,artieimg,firstartic,smalltitle)
+          VALUES (#{userid},#{textarea},#{fabulous},#{uoloadtime},#{artieimg},#{firstartic},#{smalltitle})
+    </insert>
+
+    <select id="SelectSingleArticleById" resultType="com.twgfs.domain.entity.Article">
+        SELECT <include refid="articlColum"></include> FROM article WHERE id=#{id}
+    </select>
+
+    <insert id="SaveComment">
+        INSERT INTO comment (commention,articleid,username,commenttime)
+                      VALUES (#{commention},#{articleid},#{username},#{commenttime})
+    </insert>
+
+    <select id="SelectAllContenet" resultType="com.twgfs.domain.entity.Comment">
+        SELECT id,commention,articleid,username,commenttime FROM comment WHERE articleid=#{articleid}
+        ORDER  BY  commenttime DESC limit 0,100
+    </select>
+
+    <select id="SelectSingleContenet" resultType="com.twgfs.domain.entity.Comment">
+        SELECT id,commention,articleid,username,commenttime FROM comment
+        WHERE commenttime=#{format} AND username=#{username} AND articleid=#{articleId}
+    </select>
+
+</mapper>
